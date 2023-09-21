@@ -1,5 +1,3 @@
-
-
 // Homework Average = 10%
 // Midterm 1 Score = 20%
 // Midterm 2 Score =20%
@@ -20,8 +18,6 @@
 // D is 63 to 66
 // D- is 60 to 62
 // Anything else is an E
-
-
 
 var sName = prompt("What is your name?");
 
