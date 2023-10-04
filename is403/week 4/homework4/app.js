@@ -46,10 +46,17 @@ for (let i = 1; i <= totalGames; i++) {
 }
 
 // gives the wins and losses for the whole season
-alert(userName + " " + wins + "-" + losses);
+alert(userName + "'s season total was " + wins + "-" + losses);
 
 // gives the win percentage
 let winPercentage = wins / totalGames;
-alert(winPercentage);
+alert(userName + "'s win percentage was " + winPercentage);
 
 //determines their outcome based on their win percentage
+if (winPercentage >= 0.75) {
+  alert("NCAA Women's Soccer Tournament");
+} else if (winPercentage >= 0.5) {
+  alert("Alternate Candidate for Covid");
+} else {
+  alert("See you next year");
+}
