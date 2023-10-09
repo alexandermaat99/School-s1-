@@ -15,10 +15,10 @@ app.post("/submit", (req, res) => {
 
   // Create a Nodemailer transporter with your email service configuration
   const transporter = nodemailer.createTransport({
-    service: "Gamil", // e.g., 'Gmail'
+    service: "gmail", // e.g., 'Gmail'
     auth: {
       user: "alexander.a.maat@gmail.com",
-      pass: "Am113099",
+      pass: "omyb ecmu uies gque",
     },
   });
 
