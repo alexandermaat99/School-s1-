@@ -18,6 +18,7 @@ while (iInput != 5) {
   } else if (iInput == 4) {
     aNames.shift();
   } else {
-    alert("Invalid input");
+    alert("Please enter a 1-5");
   }
+  iInput = parseInt(prompt(sMenu));
 }
