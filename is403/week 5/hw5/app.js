@@ -1,46 +1,56 @@
-// Prompt the user to enter the number of teams
-const numTeams = parseInt(prompt("How many teams?"));
+//alexander maat
+//section 001
+//This program asks the user for number of games, names of teams, then randomly generates scored for those games
+//and displays their results in a table
 
-// Check if the input is a valid number
+// prompt the user to input the number of teams (validate input with parseInt)
+let numTeams = parseInt(prompt("How many teams?: "));
+// assure that user has entered a valid number
 if (isNaN(numTeams) || numTeams <= 0) {
   alert("No teams to display");
-} else {
-  // Initialize arrays to store team names and wins
-  const teamNames = [];
-  const teamWins = [];
+}
 
-  // Gather team names and generate random wins
-  for (let i = 1; i <= numTeams; i++) {
-    const teamName = prompt(`What is team ${i}'s name?`);
-    teamNames.push(teamName);
-
-    // Generate a random number between 0 and 25 for wins
-    const wins = Math.floor(Math.random() * 26);
-    teamWins.push(wins);
+// Create two empty arrays to store team names and their corresponding number of wins.
+else {
+  let TeamNames = [];
+  let TeamWins = [];
+  // Loop through each team to collect their names from the user.
+  for (let iCount = 0; iCount < numTeams; iCount++) {
+    let InputTeamNames = prompt(
+      "Enter the name of team " + (iCount + 1) + ": "
+    );
+    // Add each input to the TeamNames array.
+    TeamNames.push(InputTeamNames);
+    // Generate a random number to represent the total wins for that team.
+    let randomWin = Math.floor(Math.random() * 26);
+    // Store this number in the TeamWins array.
+    TeamWins.push(randomWin);
   }
-
-  // Find the team with the most wins
+  // Initialize maxWins as -1 to ensure a valid comparison within the loop.
   let maxWins = -1;
-  let maxWinsTeam = "";
-
-  for (let i = 0; i < numTeams; i++) {
-    if (teamWins[i] > maxWins) {
-      maxWins = teamWins[i];
-      maxWinsTeam = teamNames[i];
+  // Use a loop to find the team with the most wins.
+  for (let iSearch = 0; iSearch < numTeams; iSearch++) {
+    if (TeamWins[iSearch] > maxWins) {
+      maxWins = TeamWins[iSearch];
+      teamWithMostWins = iSearch;
     }
   }
-
-  // Display the team with the most wins
-  alert(`${maxWinsTeam} had the most wins with a record of ${maxWins}-1`);
-
-  // Display all teams and their records
-  let teamInfo = "";
-  for (let i = 0; i < numTeams; i++) {
-    teamInfo += `${teamNames[i]} ${teamWins[i]}-${25 - teamWins[i]}`;
-    if (i < numTeams - 1) {
-      teamInfo += "\n"; // Add newline character for separation
-    }
+  // Calculate the number of losses for the team with the most wins.
+  let maxLosses = 25 - maxWins;
+  // Display a message to the user indicating the winning team and its record.
+  alert(
+    TeamNames[teamWithMostWins] +
+      " had the most wins with a record of " +
+      TeamWins[teamWithMostWins] +
+      "-" +
+      maxLosses
+  );
+  // Generate a list of all the teams and their respective losses.
+  let allTeams = "";
+  for (let iCount = 0; iCount < numTeams; iCount++) {
+    let losses = 25 - TeamWins[iCount];
+    allTeams +=
+      TeamNames[iCount] + " " + TeamWins[iCount] + "-" + losses + "\n";
   }
-
-  alert(teamInfo);
+  alert(allTeams);
 }
