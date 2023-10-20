@@ -15,6 +15,60 @@
         var output = "";
 
         //This is where you will put your code
+        //initalize new variables
+        let totalWins = 0;
+        let totalGames = 0;
+        let totalOvertimes = 0;
+
+        //itteration on numGames
+        for (let i = 1; i <= numGames; i++) {
+          //handeling the tie situation, if modulo operator for i / 2 is 0 then it's true,
+          //if not it's false
+          let isHome = i % 2 === 0;
+
+          //Generate the random score for the home and away team
+          // if isHome is true, 5, it it + 5 else it is + 0
+          let homeScore = Math.floor(Math.random() * 101) + (isHome ? 5 : 0);
+          let awayScore = Math.floor(Math.random() * 101);
+          let overtime = 0;
+
+          //Handle the event of a tie
+          while (homeScore === awayScore) {
+            homeScore += Math.floor(Math.random() * 101);
+            awayScore += Math.floor(Math.random() * 101);
+            //itterate overtime
+            overtime++;
+          }
+          let winOrLose = "";
+
+          if (homeScore > awayScore) {
+            winOrLose = "Wins";
+            totalWins += 1;
+            totalGames++;
+          } else {
+            winOrLose = "Loses";
+            totalWins += 0;
+            totalGames++;
+          }
+
+          output += myTeam + ": " + homeScore + " - " + awayScore;
+          if (overtime > 0) {
+            output += " with" + overtime + " OT";
+          }
+          output += " and" + winOrLose + "<br>";
+        }
+
+        let winPercentage = Number((totalWins / totalGames) * 100).toFixed(1);
+
+        output +=
+          myTeam +
+          " record is " +
+          totalWins +
+          "-" +
+          (totalGames - totalWins) +
+          " with a winning pct of " +
+          winPercentage +
+          "%";
 
         //Build the data to display and assign it to the output variable
         //For example: output = output + myTeam + " played " + numGames + " games<br>Their record is 25-0";
