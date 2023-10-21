@@ -1,5 +1,10 @@
-<!--Put your name here-->
-<!--Put a description here-->
+<!-- Alexander Maat 
+section 001
+This is a program that simulates a basketball season. 
+The user enters the name of their team and the number of games they want to simulate. 
+The program then simulates the games and displays the results. 
+The program also calculates the winning percentage of the team. -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,9 +17,8 @@
       function playGame() {
         var numGames = parseInt(document.getElementById("games").value);
         var myTeam = document.getElementById("teamName").value;
-        var output = "";
+        var output = ""; // Initialize the output variable
 
-        //This is where you will put your code
         //initalize new variables
         let totalWins = 0;
         let totalGames = 0;
@@ -22,21 +26,19 @@
 
         //itteration on numGames
         for (let i = 1; i <= numGames; i++) {
-          //handeling the tie situation, if modulo operator for i / 2 is 0 then it's true,
-          //if not it's false
+          // Check if your team is at home or visiting
           let isHome = i % 2 === 0;
 
-          //Generate the random score for the home and away team
-          // if isHome is true, 5, it it + 5 else it is + 0
+          // Simulate the game, including overtimes
           let homeScore = Math.floor(Math.random() * 101) + (isHome ? 5 : 0);
           let awayScore = Math.floor(Math.random() * 101);
           let overtime = 0;
 
-          //Handle the event of a tie
           while (homeScore === awayScore) {
+            // Simulate an overtime period
             homeScore += Math.floor(Math.random() * 101);
             awayScore += Math.floor(Math.random() * 101);
-            //itterate overtime
+
             overtime++;
           }
           let winOrLose = "";
@@ -51,6 +53,7 @@
             totalGames++;
           }
 
+          // Construct the game result and add it to the output
           output += myTeam + ": " + homeScore + " - " + awayScore;
           if (overtime > 0) {
             output += " with" + overtime + " OT";
@@ -58,8 +61,10 @@
           output += " and" + winOrLose + "<br>";
         }
 
+        // Calculate the winning percentage
         let winPercentage = Number((totalWins / totalGames) * 100).toFixed(1);
 
+        // Display the final statistics and winning percentage
         output +=
           myTeam +
           " record is " +
@@ -70,11 +75,7 @@
           winPercentage +
           "%";
 
-        //Build the data to display and assign it to the output variable
-        //For example: output = output + myTeam + " played " + numGames + " games<br>Their record is 25-0";
-        //NOTE: You have to use the <br> to go to a new line instead of \n because you are writing HTML
-
-        //Assign the contents of the variable output to the html tag outputGames
+        // Set the content of the outputGames element
         document.getElementById("outputGames").innerHTML = output;
       }
     </script>
