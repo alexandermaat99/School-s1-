@@ -1,5 +1,11 @@
-//Itteration
+//random number gene
+homeScore += Math.floor(Math.random() * 101);
+//random number gene with a range
+let min = 10;
+let max = 20;
+homeScore += Math.floor(Math.random() * (max - min + 1)) + min;
 
+//Itteration
 for (let i = 1; i <= Nvariable; i++) {
   //code
 }
@@ -41,11 +47,13 @@ alert(myArray[2]); //alerts 30
 
 // &&,  ||, === operators
 
-//difference betwenn .puch and .pop and .shift and .unshift
+//difference betwenn .puch and .pop and .shift and .unshift and splice and slice
 //push adds to the end of the array
 //pop removes the last element of the array
 //shift removes the first element of the array
 //unshift adds to the beginning of the array
+//splice removes an element from the array
+//slice copies an element from the array
 
 // change string to upper and lower case
 let userInputUpperCase = userInput.toUpperCase();
