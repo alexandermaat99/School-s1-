@@ -1,20 +1,20 @@
 function rollDie(dieNumber, targetNumber) {
   let rolls = 0;
   while (true) {
-    const roll = Math.floor(Math.random() * 6) + 1;
+    let roll = Math.floor(Math.random() * 6) + 1;
     rolls++;
     if (roll === targetNumber) {
       document.getElementById(
         `dice${dieNumber}`
-      ).src = `content/dice${targetNumber}Use.jpg`;
+      ).src = `content/dice${targetNumber}Use.png`;
       return rolls;
     }
   }
 }
 
 function rollTheDice() {
-  const numberInput = document.getElementById("numberInput");
-  const targetNumber = parseInt(numberInput.value);
+  let numberInput = document.getElementById("numberInput");
+  let targetNumber = parseInt(numberInput.value);
 
   if (targetNumber < 1 || targetNumber > 6) {
     alert("Please enter a number between 1 and 6.");
@@ -26,7 +26,7 @@ function rollTheDice() {
   let diceResults = [];
 
   for (let dieNumber = 1; dieNumber <= 5; dieNumber++) {
-    const rolls = rollDie(dieNumber, targetNumber);
+    let rolls = rollDie(dieNumber, targetNumber);
     totalRolls += rolls;
     diceResults.push(`Dice ${dieNumber} Rolls = ${rolls}`);
   }

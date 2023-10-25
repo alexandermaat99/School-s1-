@@ -11,18 +11,30 @@ keep rolling dice until a yahtzee is achieved, it wil desplay the number of roll
     <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
     <title>Yatzee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- html label "What number do you want for Yahtzee?"
 html input of text for getting the number -->
     <div class="appContainer">
-      <label for="numberInput">What number do you want for Yahtzee?</label>
-      <input
-        type="text"
-        id="numberInput"
-        placeholder="Enter a number between 1 and 6"
-      />
-      <button onclick="rollTheDice()">Click me</button>
+      <img class="mainLogo" src="content/mainLogo.png" alt="" />
+
+      <div class="inputContainer">
+        <label for="numberInput">What number do you want for Yahtzee?</label>
+        <div class="input-button-container">
+          <input
+            type="text"
+            id="numberInput"
+            placeholder="Enter a number between 1-6"
+          />
+          <button class="clickButton" onclick="rollTheDice()">Click me</button>
+        </div>
+      </div>
 
       <!-- need to assign empty image spots in a container -->
       <div class="dice-container">
@@ -34,8 +46,6 @@ html input of text for getting the number -->
       </div>
 
       <!-- need to assign empty paragraph spots in a container to print how many rolls it took each dice -->
-      <p id="diceResults" class="dice-result"></p>
-      <p id="totalRolls" class="dice-result"></p>
 
       <div class="diceResultContainer">
         <p id="diceResults" class="dice-result"></p>
