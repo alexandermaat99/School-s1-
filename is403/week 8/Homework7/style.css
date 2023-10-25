@@ -40,6 +40,8 @@ body {
   width: 18vw;
 }
 
+/* TODO add some padding and try to left justify, change size and color */
+
 label {
   text-align: left; /* Align the label text to the left */
   width: auto; /* Allow the label to take up only the space it needs */
@@ -76,6 +78,7 @@ img {
   margin: 0 auto; /* Center horizontally */
 }
 
+/* TODO add shadow to dice box  */
 .dice-container {
   display: flex;
   justify-content: center; /* Center the content horizontally */
