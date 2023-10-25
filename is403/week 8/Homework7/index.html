@@ -1,0 +1,46 @@
+<!-- Alexander Maat
+Section 001 
+This program will ask the user what number they want to use for Yahtzee. Then it will 
+keep rolling dice until a yahtzee is achieved, it wil desplay the number of rolls for each alonw with the die values. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <title>Yatzee</title>
+  </head>
+  <body>
+    <!-- html label "What number do you want for Yahtzee?"
+html input of text for getting the number -->
+    <div class="appContainer">
+      <label for="numberInput">What number do you want for Yahtzee?</label>
+      <input
+        type="text"
+        id="numberInput"
+        placeholder="Enter a number between 1 and 6"
+      />
+      <button onclick="rollTheDice()">Click me</button>
+
+      <!-- need to assign empty image spots in a container -->
+      <div class="dice-container">
+        <img id="dice1" src="" />
+        <img id="dice2" src="" />
+        <img id="dice3" src="" />
+        <img id="dice4" src="" />
+        <img id="dice5" src="" />
+      </div>
+
+      <!-- need to assign empty paragraph spots in a container to print how many rolls it took each dice -->
+      <p id="diceResults" class="dice-result"></p>
+      <p id="totalRolls" class="dice-result"></p>
+
+      <div class="diceResultContainer">
+        <p id="diceResults" class="dice-result"></p>
+        <p id="totalRolls" class="dice-result"></p>
+      </div>
+    </div>
+  </body>
+</html>

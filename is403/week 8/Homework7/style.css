@@ -1,0 +1,9 @@
+img {
+  width: 100px;
+}
+.dice-container {
+  display: flex;
+}
+.dice-result {
+  text-align: left;
+}
