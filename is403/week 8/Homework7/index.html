@@ -1,7 +1,6 @@
 <!-- Alexander Maat
 Section 001 
-This program will ask the user what number they want to use for Yahtzee. Then it will 
-keep rolling dice until a yahtzee is achieved, it wil desplay the number of rolls for each alonw with the die values. -->
+This program will ask the user what number they want to use for Yahtzee and how many dice they want to roll. Then it will keep rolling dice until a Yahtzee is achieved, it will display the number of rolls for each die with the die values. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +9,7 @@ keep rolling dice until a yahtzee is achieved, it wil desplay the number of roll
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
-    <title>Yatzee</title>
+    <title>Yahtzee</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,8 +18,7 @@ keep rolling dice until a yahtzee is achieved, it wil desplay the number of roll
     />
   </head>
   <body>
-    <!-- html label "What number do you want for Yahtzee?"
-html input of text for getting the number -->
+    <!-- html label "What number do you want for Yahtzee?" html input of text for getting the number -->
     <div class="appContainer">
       <img class="mainLogo" src="content/mainLogo.png" alt="" />
 
@@ -30,13 +28,13 @@ html input of text for getting the number -->
           <input
             type="text"
             id="numberInput"
-            placeholder="Enter a number between 1-6"
+            placeholder="Enter # between 1-6"
           />
           <button class="clickButton" onclick="rollTheDice()">Click me</button>
         </div>
       </div>
 
-      <!-- need to assign empty image spots in a container -->
+      <!-- need to assign empty image spots in a container for dice images-->
       <div class="dice-container">
         <img id="dice1" src="" />
         <img id="dice2" src="" />
@@ -46,10 +44,16 @@ html input of text for getting the number -->
       </div>
 
       <!-- need to assign empty paragraph spots in a container to print how many rolls it took each dice -->
-
       <div class="diceResultContainer">
         <p id="diceResults" class="dice-result"></p>
         <p id="totalRolls" class="dice-result"></p>
+      </div>
+      <!-- added the ability to change the number of dice that are rolled  -->
+      <div class="inputContainer2">
+        <label for="newDieNumber">Change the number of dice you roll:</label>
+        <div class="input-button-container2">
+          <input type="number" id="newDieNumber" value="5" min="1" max="5" />
+        </div>
       </div>
     </div>
   </body>

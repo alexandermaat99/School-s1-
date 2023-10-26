@@ -1,5 +1,13 @@
+:root {
+  --greenPrimary: #fffcf1;
+  --greenSecondary: #d3d1ab;
+  --greentertiary: #e2e0b7;
+  --greenquaternary: #f2efe0;
+  --other: #fffceb;
+}
+
 body {
-  background-color: #fffcf1;
+  background-color: var(--greenPrimary);
   display: flex; /* Center content horizontally and vertically */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -11,13 +19,14 @@ body {
 .mainLogo {
   height: 10vh;
   width: auto;
+  margin: auto;
 }
 
 .appContainer {
   width: 50vw;
   text-align: center; /* Center the content within appContainer */
   height: 80vh;
-  border: 8px solid #d3d1ab;
+  border: 8px solid var(--greenSecondary);
   padding: 1vw;
   border-radius: 20px;
   background-color: #e2e0b7;
@@ -29,33 +38,71 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
   width: 100%; /* Take up the full width of the parent container */
+}
+.inputContainer2 {
+  display: flex;
+  flex-direction: row; /* Display label and input in a row */
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  width: 100%; /* Take up the full width of the parent container */
+}
+
+.inputContainer2 label {
+  display: inline-block;
+  width: auto;
+  padding-right: 1vw;
+  padding-bottom: 0;
 }
 
 .input-button-container {
   display: flex;
   flex-direction: row; /* Put input and button on the same line */
-  width: 18vw;
+  width: auto;
+}
+.input-button-container2 {
+  display: flex;
+  flex-direction: row; /* Keep input and button on the same line */
+  width: auto; /* Take up the full width of the parent container */
+}
+.inputContainer2 input {
+  display: inline-block;
 }
 
 /* TODO add some padding and try to left justify, change size and color */
 
 label {
-  text-align: left; /* Align the label text to the left */
+  text-align: center; /* Align the label text to the left */
   width: auto; /* Allow the label to take up only the space it needs */
-  padding: 0 10px; /* Add some left padding to create space between the label and input */
+  padding-bottom: 1vh;
+  color: rgb(78, 88, 79);
+  font-size: medium;
 }
 
 #numberInput {
   border: 0;
-  padding: 20px;
-  background-color: rgba(255, 0, 0, 0);
-  flex: 1; /* Allow input to grow and fill available space */
-  background-color: #f2efe0;
+  background-color: var(--other);
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
+  padding-left: 2vw;
+  color: rgb(78, 88, 79);
+}
+
+#newDieNumber {
+  border: 0;
+  padding: 15px;
+  background-color: var(--other);
+  border-radius: 20px;
+  padding-left: 2vw;
+  color: rgb(78, 88, 79);
+}
+
+#numberInput::placeholder {
+  color: rgba(100, 113, 101, 0.591);
 }
 
 .clickButton {
@@ -63,19 +110,21 @@ label {
   border-bottom-right-radius: 20px;
   border: 0;
   width: auto; /* Allow button to grow to fit its content */
-  background-color: #f2efe0;
+  background-color: var(--greenPrimary);
   padding: 1vw;
+  color: rgb(78, 88, 79);
 }
 
 .clickButton:hover {
   cursor: pointer;
-  background-color: #d3d1ab;
+  background-color: var(--greenSecondary);
+  color: var(--greenPrimary);
 }
 
 img {
-  width: 100px;
+  width: 130px;
   display: block; /* Make sure the image is centered within its container */
-  margin: 0 auto; /* Center horizontally */
+  margin: 0.5vw; /* Center horizontally */
 }
 
 /* TODO add shadow to dice box  */
@@ -85,7 +134,22 @@ img {
   align-items: center; /* Center the content vertically */
 }
 
-.dice-result {
-  text-align: center;
-  width: 100%;
+#diceResults {
+  display: flex; /* Add display flex */
+  flex-direction: column; /* Set the direction to column */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  text-align: center; /* Center the text within the container */
+}
+#diceResults p {
+  border: black solid 1px;
+  width: 10vw;
+  margin: 5px; /* Add some margin for spacing between the border and content */
+  font-size: large;
+  padding: 0.5vh;
+  border-radius: 20px;
+}
+
+#totalRolls {
+  font-size: xx-large;
 }
