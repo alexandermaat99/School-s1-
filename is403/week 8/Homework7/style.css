@@ -73,8 +73,6 @@ body {
   display: inline-block;
 }
 
-/* TODO add some padding and try to left justify, change size and color */
-
 label {
   text-align: center; /* Align the label text to the left */
   width: auto; /* Allow the label to take up only the space it needs */
@@ -106,12 +104,14 @@ label {
 }
 
 .clickButton {
+  transition: color 0.6s ease;
+  transition: background-color 0.3s ease;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: 0;
   width: auto; /* Allow button to grow to fit its content */
-  background-color: var(--greenPrimary);
   padding: 1vw;
+  background-color: var(--greenPrimary);
   color: rgb(78, 88, 79);
 }
 
@@ -119,15 +119,16 @@ label {
   cursor: pointer;
   background-color: var(--greenSecondary);
   color: var(--greenPrimary);
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 img {
-  width: 130px;
+  width: 100px;
   display: block; /* Make sure the image is centered within its container */
   margin: 0.5vw; /* Center horizontally */
 }
 
-/* TODO add shadow to dice box  */
 .dice-container {
   display: flex;
   justify-content: center; /* Center the content horizontally */
@@ -142,7 +143,9 @@ img {
   text-align: center; /* Center the text within the container */
 }
 #diceResults p {
-  border: black solid 1px;
+  border: var(--greenSecondary) solid 3px;
+  background-color: var(--greentertiary);
+  color: rgb(78, 88, 79);
   width: 10vw;
   margin: 5px; /* Add some margin for spacing between the border and content */
   font-size: large;
