@@ -56,7 +56,8 @@ function calculateMatch() {
   let sLovePhrase = lovePhrase.length;
   let iPower = Math.ceil((iLoveCount / sLovePhrase) * 22 * iFactor);
 
-  heart.setAttribute("data-value", iPower); // Update the data-value attribute here
+  alert(iPower);
+  document.getElementById("heart").setAttribute("data-value", iPower); // Update the data-value attribute here
 
   // Set the heart value and message
 
@@ -73,18 +74,18 @@ function calculateMatch() {
   matchMessage.innerHTML = message;
 }
 
-function resetFields() {
-  document.getElementById("lovePhrase").value = "";
-  document.getElementById("firstName").value = "";
-  document.getElementById("secondName").value = "";
-  document.getElementById("checkbox1").checked = false;
-  document.getElementById("checkbox2").checked = false;
-  document.getElementById("checkbox3").checked = false;
-  document.getElementById("checkbox4").checked = false;
-  document.getElementById("checkbox5").checked = false;
-  let heart = document.getElementById("heart");
-  heart.setAttribute("data-value", "0");
-  let matchMessage = document.getElementById("matchMessage");
-  matchMessage.innerHTML = "";
-  document.getElementById("lovePhrase").focus();
-}
+// function resetFields() {
+//   document.getElementById("lovePhrase").value = "";
+//   document.getElementById("firstName").value = "";
+//   document.getElementById("secondName").value = "";
+//   document.getElementById("checkbox1").checked = false;
+//   document.getElementById("checkbox2").checked = false;
+//   document.getElementById("checkbox3").checked = false;
+//   document.getElementById("checkbox4").checked = false;
+//   document.getElementById("checkbox5").checked = false;
+//   let heart = document.getElementById("heart");
+//   heart.setAttribute("data-value", "0");
+//   let matchMessage = document.getElementById("matchMessage");
+//   matchMessage.innerHTML = "";
+//   document.getElementById("lovePhrase").focus();
+// }
