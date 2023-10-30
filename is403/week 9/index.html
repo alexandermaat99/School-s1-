@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <label>Enter NetID:</label>
+    <input type="text" id="netid" />
+    <br />
+    <br />
+    <label>Enter First Name:</label>
+    <input type="text" id="first" />
+    <br />
+    <br />
+    <label>Enter Last Name:</label>
+    <input type="text" id="last" />
+    <br />
+    <br />
+    <button onclick="play()">Create</button>
+    <button onclick="display()">Print</button>
+    <br />
+    <br />
+    <fieldset style="width: 0px">
+      <legend>Courses</legend>
+      <label>Enter Number:</label>
+      <input type="text" id="course_num" />
+      <br />
+      <br />
+      <label>Enter Name:</label>
+      <input type="text" id="course_name" />
+      <br />
+      <br />
+      <button onclick="addCourse()">Add Course</button>
+    </fieldset>
+    <br />
+    <br />
+    <p id="output"></p>
+  </body>
+</html>
