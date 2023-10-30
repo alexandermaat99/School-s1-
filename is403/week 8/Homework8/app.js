@@ -57,7 +57,7 @@ function calculateMatch() {
   let iPower = Math.ceil((iLoveCount / sLovePhrase) * 22 * iFactor);
 
   alert(iPower);
-  document.getElementById("heart").setAttribute("data-value", iPower); // Update the data-value attribute here
+  heart.setAttribute("data-value", iPower); // Update the data-value attribute here
 
   // Set the heart value and message
 
