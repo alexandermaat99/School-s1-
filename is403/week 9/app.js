@@ -55,3 +55,24 @@ function addCourse() {
   }
 }
 //print all this info
+function display() {
+  let sOutput = "";
+  for (let i = 0; i < listStudents.length; i++) {
+    sOutput +=
+      listStudents[i].firstName +
+      " " +
+      listStudents[i].lastName +
+      " " +
+      listStudents[i].courses +
+      "<br>";
+    for (let iCourse = 0; iCourse < listStudents[i].courses.length; iCourse++) {
+      sOutput =
+        sOutput +
+        "<font color = 'blue'>" +
+        listStudents[iCount].courses[iCourse].courseDesc +
+        "</font>" +
+        "<br>";
+    }
+  }
+  document.getElementById("output").innerHTML = sOutput;
+}
