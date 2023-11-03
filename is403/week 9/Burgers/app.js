@@ -15,7 +15,7 @@ class Person {
     this.customerName = this.randomName();
   }
   randomName() {
-    const asCustomers = [
+    let asCustomers = [
       "Jefe",
       "El Guapo",
       "Lucky Day",
@@ -70,6 +70,8 @@ document.getElementById("executeButton").addEventListener("click", function () {
 
   // Sort the order by the number of burgers ordered
   CustomerOrders.sort((a, b) => b[1] - a[1]);
+  // Clear the existing output before displaying new content
+  document.getElementById("output").innerHTML = "";
 
   // Display the contents of customer orders in descending order
   CustomerOrders.forEach((customer) => {
