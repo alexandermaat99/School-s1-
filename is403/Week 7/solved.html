@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Midterm 1</title>
+  </head>
+  <body>
+    <button type="button" onclick="goForTheGold()">Go</button>
+    <p id="olympicOutput"></p>
+
+    <script>
+      // Initialize arrays to store athlete data
+      var athleteNames = [];
+      var monetaryValues = [];
+      var monetaryMessages = [];
+
+      function goForTheGold() {
+        // Use the JavaScript prompt to get the number of athletes to be processed
+        var numberOfAthletes = parseInt(prompt("How many athletes?"));
+
+        if (numberOfAthletes === 0) {
+          alert("No athletes to process.");
+          return;
+        }
+
+        // Loop to gather data for each athlete
+        for (var i = 1; i <= numberOfAthletes; i++) {
+          var athleteName = prompt("Enter Athlete " + i + "'s name:");
+          athleteNames.push(athleteName);
+
+          var goldMedals = parseInt(
+            prompt("Enter " + athleteName + "'s number of Gold Medals:")
+          );
+          var silverMedals = parseInt(
+            prompt("Enter " + athleteName + "'s number of Silver Medals:")
+          );
+          var bronzeMedals = parseInt(
+            prompt("Enter " + athleteName + "'s number of Bronze Medals:")
+          );
+
+          // Calculate the monetary value for the athlete's medals
+          var monetaryValue =
+            goldMedals * 37500 + silverMedals * 22500 + bronzeMedals * 15000;
+          monetaryValues.push(monetaryValue);
+
+          // Determine the result message based on monetary value
+          if (monetaryValue >= 500000) {
+            monetaryMessages.push("Become a sports commentator");
+          } else if (monetaryValue >= 250000 && monetaryValue < 500000) {
+            monetaryMessages.push("You are rich and famous");
+          } else {
+            monetaryMessages.push("Great job! Keep training!");
+          }
+        }
+
+        // Sort the monetary values array in descending order
+        for (var i = 0; i < monetaryValues.length; i++) {
+          for (var j = i + 1; j < monetaryValues.length; j++) {
+            if (monetaryValues[i] < monetaryValues[j]) {
+              // Swap values and keep arrays in sync
+              var tempValue = monetaryValues[i];
+              monetaryValues[i] = monetaryValues[j];
+              monetaryValues[j] = tempValue;
+
+              var tempName = athleteNames[i];
+              athleteNames[i] = athleteNames[j];
+              athleteNames[j] = tempName;
+
+              var tempMessage = monetaryMessages[i];
+              monetaryMessages[i] = monetaryMessages[j];
+              monetaryMessages[j] = tempMessage;
+            }
+          }
+        }
+
+        // Display the results in the HTML p tag with id 'olympicOutput'
+        var outputElement = document.getElementById("olympicOutput");
+        outputElement.innerHTML = "";
+
+        for (var i = 0; i < athleteNames.length; i++) {
+          outputElement.innerHTML +=
+            athleteNames[i] +
+            " - $" +
+            monetaryValues[i] +
+            " - " +
+            monetaryMessages[i] +
+            "<br>";
+        }
+      }
+    </script>
+  </body>
+</html>
