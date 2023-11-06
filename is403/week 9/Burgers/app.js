@@ -1,19 +1,18 @@
-// Create the classes - Order, Person, and Customer
 class Order {
   constructor() {
-    this.burgerCount = this.randomBurgers();
+    this.burger_count = this.randomBurgers();
   }
-  // Generate a random number of burgers between `1` and `20`
+
   randomBurgers() {
     return Math.floor(Math.random() * 20) + 1;
   }
 }
 
-// Define the Person class
 class Person {
   constructor() {
-    this.customerName = this.randomName();
+    this.customer_name = this.randomName();
   }
+
   randomName() {
     let asCustomers = [
       "Jefe",
@@ -30,7 +29,6 @@ class Person {
   }
 }
 
-// Define the Customer class inheriting from Person
 class Customer extends Person {
   constructor() {
     super();
@@ -38,49 +36,47 @@ class Customer extends Person {
   }
 }
 
-// Create the queue and CustomerOrders array
-let queue = [];
+let customerQueue = []; // Queue of customers
 
-// Create an array to hold the customers' orders
-let CustomerOrders = [];
+let customerOrders = [];
 
-document.getElementById("executeButton").addEventListener("click", function () {
-  // Generate 100 random customers and add them to the queue
+document
+  .getElementById("processButton")
+  .addEventListener("click", processCustomers);
 
+function processCustomers() {
   for (let i = 0; i < 100; i++) {
-    let customer = new Customer();
-    queue.push(customer);
+    let newCustomer = new Customer();
+    customerQueue.push(newCustomer);
   }
 
-  // Process the customers' orders
-  queue.forEach((customer) => {
-    let customerName = customer.customerName;
-    let burgerCount = customer.order.burgerCount;
-
-    let existingCustomer = CustomerOrders.find(
-      (cust) => cust[0] === customerName
+  while (customerQueue.length > 0) {
+    let currentCustomer = customerQueue.shift();
+    let existingCustomer = customerOrders.find(
+      (cust) => cust[0] === currentCustomer.customer_name
     );
 
     if (existingCustomer) {
-      existingCustomer[1] += burgerCount;
+      existingCustomer[1] += currentCustomer.order.burger_count;
     } else {
-      CustomerOrders.push([customerName, burgerCount]);
+      customerOrders.push([
+        currentCustomer.customer_name,
+        currentCustomer.order.burger_count,
+      ]);
     }
-  });
+  }
 
-  // Sort the order by the number of burgers ordered
-  CustomerOrders.sort((a, b) => b[1] - a[1]);
-  // Clear the existing output before displaying new content
-  document.getElementById("output").innerHTML = "";
+  // customerOrders.sort((a, b) => b[1] - a[1]);
+  customerOrders.sort((c, d) => c[1] - d[1]);
 
-  // Display the contents of customer orders in descending order
-  CustomerOrders.forEach((customer) => {
-    let [customerName, burgerCount] = customer;
-    let formattedName = customerName.padEnd(50, " ");
-    document.getElementById(
-      "output"
-    ).innerHTML += `${formattedName} ${burgerCount
-      .toString()
-      .padEnd(5, " ")}<br>`;
+  displayCustomerOrders();
+}
+
+function displayCustomerOrders() {
+  let output = document.getElementById("output");
+
+  customerOrders.forEach((customer) => {
+    let burgers = customer[1].toString();
+    output.innerHTML += `<div style="display: flex;"><div style="width: 150px;">${customer[0]}</div><div>${burgers}</div></div><br>`;
   });
-});
+}
