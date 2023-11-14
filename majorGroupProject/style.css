@@ -1,0 +1,44 @@
+* {
+  font-family: "Poppins", sans-serif;
+  --primary-color: #204e43;
+  --secondary-color: #9ed668;
+  --tertiary--color: #fffdf8;
+  --quaternary-color: #ff7b4a;
+  --text-color: #041b0d;
+  --text-color-2: #eddecd;
+  --text-color-3: #3269df;
+}
+
+body {
+  background-color: var(--tertiary--color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h2 {
+  margin-top: 20vw;
+  text-align: center;
+}
+#firstName,
+#lastName,
+#email,
+#phone {
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+  width: 90%;
+  text-align: left;
+  padding: 5px;
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
+.mainForm {
+  width: 80vw;
+}

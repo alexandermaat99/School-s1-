@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="mainForm">
+      <h2>StyleLuxExtensions</h2>
+
+      <form action="/submit-form" method="post">
+        <!-- Text Input -->
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+          required
+        /><br /><br />
+
+        <!-- last name -->
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Last Name"
+          required
+        /><br /><br />
+
+        <!-- Email Input -->
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email Address"
+          required
+        /><br /><br />
+
+        <!-- phone number -->
+        <input
+          type="phone"
+          id="phone"
+          name="phone"
+          placeholder="Phone"
+          required
+        /><br /><br />
+
+        <!-- Checkbox Input -->
+        <label for="checkbox"
+          >Would you like to add any of the following services?</label
+        ><br />
+        <input type="checkbox" id="item1" name="item1" value="item1" />
+        <label for="item1">Haircut</label><br />
+        <input type="checkbox" id="item1" name="item1" value="item1" />
+        <label for="item1">Gloss</label><br />
+        <input type="checkbox" id="item2" name="item2" value="item2" />
+        <label for="item2">Conditioning Treatment</label><br /><br />
+
+        <!-- Radio Input -->
+        <label for="gender"
+          >Would you like to add any of the following services?:</label
+        ><br />
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label><br />
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label><br /><br />
+
+        <!-- File Input -->
+        <label for="file">Upload File:</label>
+        <input type="file" id="file" name="file" /><br /><br />
+        <!-- File Input -->
+        <label for="file">Upload File:</label>
+        <input type="file" id="file" name="file" /><br /><br />
+
+        <!-- Date Input -->
+        <label for="date">Select a date:</label>
+        <input type="date" id="date" name="date" /><br /><br />
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit" />
+        <br />
+
+        <!-- stylelist login -->
+        <a href="loginPage/login.html">Stylist Login</a>
+      </form>
+    </div>
+  </body>
+</html>
