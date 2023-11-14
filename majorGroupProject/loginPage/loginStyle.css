@@ -1,11 +1,10 @@
 * {
   font-family: "Noto Serif", serif;
-  font-family: "Inter", sans-serif;
-  --primary-color: #204e43;
+  --primary-color: #ececec;
   --secondary-color: #9ed668;
   --tertiary--color: #fffdf8;
   --quaternary-color: #ff7b4a;
-  --text-color: #041b0d;
+  --text-color: #e2e2e2;
   --text-color-2: #eddecd;
   --text-color-3: #3269df;
 }

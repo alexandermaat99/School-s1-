@@ -1,6 +1,5 @@
 * {
-  --titleFont: font-family: 'Noto Serif', serif;
-  --otherFont: font-family: 'Inter', sans-serif;
+  font-family: "Noto Serif", serif;
   --primary-color: #ececec;
   --secondary-color: #9ed668;
   --tertiary--color: #fffdf8;
@@ -23,9 +22,10 @@ body {
 }
 
 #title {
+  font-family: "Noto Serif", serif;
   text-align: center;
-  font-weight: 200;
-  font-size: 50px;
+  font-weight: 400;
+  font-size: 40px;
   padding: 5vh;
   color: rgb(255, 255, 255);
   background-image: url(content/9A3DCE8D-29C4-42E7-A31D-EE324A42B1FF.webp);
@@ -44,21 +44,18 @@ body {
   padding: 5px;
 }
 
-
-
 .mainForm {
   width: 80vw;
 }
 
-form{
-  font-family:"Inter", sans-serif;
+form {
+  font-family: "Inter", sans-serif;
 }
 
-input[type='checkbox'] {
-  accent-color: wheat;
+input[type="checkbox"] {
+  accent-color: rgb(179, 245, 190);
 }
 
 input:focus {
   outline-color: wheat;
 }
-
