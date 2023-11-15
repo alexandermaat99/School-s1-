@@ -1,5 +1,4 @@
 * {
-  font-family: "Noto Serif", serif;
   --primary-color: #ececec;
   --secondary-color: #9ed668;
   --tertiary--color: #fffdf8;
@@ -10,8 +9,9 @@
 }
 
 body {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-image: url(/majorGroupProject/content/9A3DCE8D-29C4-42E7-A31D-EE324A42B1FF.webp);
+  background-size: contain;
+  color: white;
   margin: 0;
   padding: 0;
   display: flex;
@@ -20,17 +20,32 @@ body {
   height: 100vh;
 }
 
+#title {
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  font-size: 30px;
+  padding: 0;
+}
 .login-container {
-  background-color: var(--tertiary--color);
+  font-family: "Inter", sans-serif;
+  background-color: rgb(58, 58, 58);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+  padding: 30px;
+  padding-bottom: 50px;
   width: 250px;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 0;
+  margin-bottom: 3vh;
+}
+input {
+  border-width: 0 0 2px;
+  border-color: white;
+  color: white;
+  background: transparent;
 }
 
 form {
@@ -60,7 +75,7 @@ button {
   border: none;
   border-radius: 3px;
   background-color: var(--primary-color);
-  color: var(--tertiary--color);
+  color: black;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
