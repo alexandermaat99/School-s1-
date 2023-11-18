@@ -60,28 +60,22 @@ function addCourse() {
 }
 
 function displayStudents() {
-  let sOutput = "";
-  let iStudentCount;
-  let iCourseCount;
+  var sOutput = "";
 
-  for (
-    iStudentCount = 0;
-    iStudentCount < studentArray.length;
-    iStudentCount++
-  ) {
+  for (var i = 0; i < studentArray.length; i++) {
     sOutput +=
-      studentArray[iStudentCount].lastName +
-      ", " +
-      studentArray[iStudentCount].firstName +
-      "<br>";
-    for (iCourseCount = 0; iCourseCount < studentArray.length; iCourseCount++) {
-      sOutput =
-        +studentArray[iStudentCount].grades[iCourseCount].courseNum +
+      studentArray[i].lastName + ", " + studentArray[i].firstName + "<br>";
+
+    for (var j = 0; j < studentArray[i].grades.length; j++) {
+      sOutput +=
+        studentArray[i].grades[j].courseNum +
         " was " +
-        studentArray[iStudentCount].grades[iCourseCount].letterGrade +
+        studentArray[i].grades[j].letterGrade +
         "<br>";
     }
+
     sOutput += "<br><br>";
-    document.getElementById("output").innerHTML = sOutput;
   }
+
+  document.getElementById("output").innerHTML = sOutput;
 }
