@@ -2,16 +2,16 @@
 // (first and last with both being strings). The coach is an object from the BaseballCoach class.
 
 class Team {
-  constructor(teamName, wins, losses, coachFirstName, coachLastName) {
+  constructor(teamName, wins, losses, coach) {
     this.teamName = teamName;
     this.wins = wins;
     this.losses = losses;
-    this.coach = new BaseballCoach(coachFirstName, coachLastName, 0, 0);
+    this.coach = coach;
   }
-  teamName;
-  wins;
-  losses;
-  coachName = new BaseballCoach();
+
+  getTeamInfo() {
+    return `The ${this.teamName} have won ${this.wins} games and lost ${this.losses} games and their coach is ${this.coach.firstName} ${this.coach.lastName}`;
+  }
 }
 
 // Create a BaseballTeam class. This class inherits from the Team class and has the attributes of team batting average (float), pitching average (float).
