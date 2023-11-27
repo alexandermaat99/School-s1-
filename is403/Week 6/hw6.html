@@ -1,0 +1,92 @@
+<!-- Alexander Maat 
+section 001
+This is a program that simulates a basketball season. 
+The user enters the name of their team and the number of games they want to simulate. 
+The program then simulates the games and displays the results. 
+The program also calculates the winning percentage of the team. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="/ruxitagentjs_ICA2NVfqru_10275230919171419.js"
+      data-dtconfig="rid=RID_-1476085702|rpid=1638055419|domain=byu.edu|reportUrl=https://bf19966hyx.bf.dynatrace.com/bf|app=718d108ceb0c6349|cors=1|featureHash=ICA2NVfqru|vcv=2|rdnt=1|uxrgce=1|bp=3|cuc=lg366a9h|mel=100000|dpvc=1|ssv=4|lastModification=1697670162689|tp=500,50,0,1|agentUri=/ruxitagentjs_ICA2NVfqru_10275230919171419.js"
+    ></script>
+    <script>
+      function playGame() {
+        var numGames = parseInt(document.getElementById("games").value);
+        var myTeam = document.getElementById("teamName").value;
+        var output = ""; // Initialize the output variable
+
+        //initalize new variables
+        let totalWins = 0;
+        let totalGames = 0;
+        let totalOvertimes = 0;
+
+        //itteration on numGames
+        for (let i = 1; i <= numGames; i++) {
+          // Check if your team is at home or visiting
+          let isHome = i % 2 === 0;
+
+          // Simulate the game, including overtimes
+          let homeScore = Math.floor(Math.random() * 101) + (isHome ? 5 : 0);
+          let awayScore = Math.floor(Math.random() * 101);
+          let overtime = 0;
+
+          while (homeScore === awayScore) {
+            // Simulate an overtime period
+            homeScore += Math.floor(Math.random() * 101);
+            awayScore += Math.floor(Math.random() * 101);
+
+            overtime++;
+          }
+          let winOrLose = "";
+
+          if (homeScore > awayScore) {
+            winOrLose = "Wins";
+            totalWins += 1;
+            totalGames++;
+          } else {
+            winOrLose = "Loses";
+            totalWins += 0;
+            totalGames++;
+          }
+
+          // Construct the game result and add it to the output
+          output += myTeam + ": " + homeScore + " - " + awayScore;
+          if (overtime > 0) {
+            output += " with" + overtime + " OT";
+          }
+          output += " and" + winOrLose + "<br>";
+        }
+
+        // Calculate the winning percentage
+        let winPercentage = Number((totalWins / totalGames) * 100).toFixed(1);
+
+        // Display the final statistics and winning percentage
+        output +=
+          myTeam +
+          " record is " +
+          totalWins +
+          "-" +
+          (totalGames - totalWins) +
+          " with a winning pct of " +
+          winPercentage +
+          "%";
+
+        // Set the content of the outputGames element
+        document.getElementById("outputGames").innerHTML = output;
+      }
+    </script>
+
+    <title>Welcome to March Madness</title>
+  </head>
+  <body>
+    Enter your team name:
+    <input type="text" name="teamName" id="teamName" /><br /><br />
+    Number of games: <input type="text" name="games" id="games" /><br /><br />
+    <button type="button" onclick="playGame()">Start Season</button><br />
+    <p id="outputGames"></p>
+  </body>
+</html>

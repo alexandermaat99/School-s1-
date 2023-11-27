@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let aBreakfast = [
+        ["spam", 12],
+        ["bacone", 5],
+        ["grits", 2],
+      ];
+
+      let sOutput = "";
+
+      for (let iOutlet = 0; iOuter < a.aBreakfast.length; iOuter++) {
+        for (let iInner = 0; iInner < aBreakfast[iOuter].length; iInner++) {
+          sOutput += "" + aBreakfast[iOuter][0] + "" + aBreakfast[iOuter][1];
+        }
+
+        alert(sOutput);
+
+        sOutput = "";
+
+        for (let iOuter = 0; iOuter < a.aBreakfast.length; iOuter++) {
+          for (let iInner = 0; iInner < aBreakfast[iOuter].length; iInner++) {
+            sOutput += sOutput + " " + aBreakfast[iOuter][iInner];
+          }
+        }
+
+        sOutput = " ";
+
+        aBreakfast.forEach((aFood) => {
+          aOutput = sOutput + aFood[0] + " " + aFood[1];
+        });
+      }
+    </script>
+  </body>
+</html>
