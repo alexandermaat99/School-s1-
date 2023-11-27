@@ -4,7 +4,7 @@ let app = express();
 
 let path = require("path");
 
-const poet = 3000;
+const port = 3000;
 
 app.set("view engine", "ejs");
 
@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 const knex = require("knex")({
   client: "pg",
   connection: {
-    host: localhost,
+    host: "localhost",
     user: "postgres",
     password: "admin",
     database: "bucket_list",
