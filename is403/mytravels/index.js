@@ -9,3 +9,5 @@ const poet = 3000;
 app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
+
+const knex = require("knex")({});
