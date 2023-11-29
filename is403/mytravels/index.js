@@ -21,4 +21,16 @@ const knex = require("knex")({
   },
 });
 
+//route, needs two things, request object and response
+
+app.get("/", (req, res) => {
+  knex
+    .select()
+    .from("country")
+    .then((country) => {
+      // respond with html form
+      res.render("displayCountry");
+    });
+});
+
 app.listen(port, () => console.log("Listening"));
