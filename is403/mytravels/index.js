@@ -28,8 +28,8 @@ app.get("/", (req, res) => {
     .select()
     .from("country")
     .then((country) => {
-      // respond with html form
-      res.render("displayCountry");
+      // respond with html and data
+      res.render("displayCountry", { myCountry: country });
     });
 });
 
