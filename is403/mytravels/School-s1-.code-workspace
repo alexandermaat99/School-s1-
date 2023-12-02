@@ -1,11 +1,13 @@
 {
-	"folders": [
-		{
-			"path": "../.."
-		},
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "name": "School-s1-",
+      "path": "../.."
+    },
+    {
+      "name": "mytravels",
+      "path": "."
+    }
+  ],
+  "settings": {}
 }
