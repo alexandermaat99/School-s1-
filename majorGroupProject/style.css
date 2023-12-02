@@ -1,0 +1,107 @@
+* {
+  font-family: "Noto Serif", serif;
+  --primary-color: #ececec;
+  --secondary-color: rgb(162, 216, 255);
+  --tertiary-color: #fffdf8; /* Corrected the typo in variable name */
+  --quaternary-color: #ff7b4a;
+  --text-color: #e2e2e2;
+  --text-color-2: #eddecd;
+  --text-color-3: #3269df;
+}
+
+body {
+  background-color: rgb(58, 58, 58);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  height: auto; /* Adjust height based on content */
+  overflow-x: hidden;
+}
+
+#title {
+  font-family: "Noto Serif", serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 40px;
+  padding: 5vh;
+  color: rgb(255, 255, 255);
+  background-image: url(content/9A3DCE8D-29C4-42E7-A31D-EE324A42B1FF.webp);
+  background-size: cover;
+  border-radius: 10px;
+}
+
+#firstName,
+#lastName,
+#email,
+#phone,
+#medicalConditions {
+  width: 95%;
+  text-align: left;
+  padding: 5px;
+  font-family: "Inter", sans-serif;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: white;
+  color: white;
+  background-color: transparent;
+}
+
+#firstName:focus,
+#lastName:focus,
+#email:focus,
+#phone:focus #medicalConditions:focus {
+  border-color: var(--secondary-color);
+}
+
+.mainForm {
+  width: 80vw;
+  font-family: "Inter", sans-serif;
+}
+input,
+label {
+  font-family: "Inter", sans-serif;
+}
+
+form {
+  font-family: "Inter", sans-serif;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--secondary-color);
+}
+
+select {
+  width: 100%;
+  border-width: 0 0 2px;
+  border-color: white;
+  color: white;
+  background: transparent;
+  outline: none; /* Remove default focus outline */
+  font-family: "Inter", sans-serif; /* Corrected the case of font-family */
+}
+
+select:focus {
+  border-color: var(--secondary-color);
+}
+
+#submit {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  width: 100%;
+}
+
+#stylistLoginLink {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  padding-bottom: 5vh;
+}
