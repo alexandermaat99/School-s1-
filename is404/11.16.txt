@@ -1,0 +1,9 @@
+mac address, is this on my network ? 
+if it is, goes direct to distenation device, sent by mac address
+if on a dfferent newtwork, goes to router using mac address
+
+arp is the protocol 
+addrees resolution protocol
+
+mac address never seen outside network 
+

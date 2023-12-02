@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column; /* Display items in a column */
+  justify-content: center;
+  align-items: center;
+  margin-top: 30vh; /* Adjust top margin for spacing */
+}
+
+#output {
+  margin: 2vw;
+  padding: 2vw;
+  border: black 2px solid;
+  border-radius: 20px;
+}
+
+#processButton {
+  padding: 0.5vw;
+  border-radius: 10px;
+  border: black 2px solid;
+}
+
+#processButton:hover {
+  border: green 2px solid;
+  color: green;
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.206);
+  cursor: pointer;
+}
+
+/* .customers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30vh;
+}
+
+.burgers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30vh;
+} */
