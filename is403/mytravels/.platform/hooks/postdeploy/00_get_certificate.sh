@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-sudo certbot -n -d amaatmytravels.us-east-1.elasticbeanstalk.com/ --nginx --agree-tos --email aamaat99@gmail.com
+# Place in .platform/hooks/postdeploy directory
+sudo certbot -n -d YOURDOMAINHERE --nginx --agree-tos --email YOUREMAILHERE
